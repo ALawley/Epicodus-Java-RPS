@@ -6,6 +6,10 @@ public class RockPaperScissors {
     Boolean result = false;
     if (input1 == "Rock" && input2 == "Scissors"){
       result = true;
+    } else if (input1 == "Scissors" && input2 == "Paper"){
+      result = true;
+    } else if (input1 == "Paper" && input2 == "Rock"){
+      result = true;
     }
     return result;
   }
