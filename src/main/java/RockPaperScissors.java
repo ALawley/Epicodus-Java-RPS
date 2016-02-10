@@ -13,5 +13,16 @@ public class RockPaperScissors {
     }
     return result;
   }
+  public static String whoWins(String player1, String player2) {
+    String result = "";
+    if (checkWinner(player1, player2)) {
+      result = "Player One Wins!";
+    } else if (checkWinner(player2, player1)) {
+      result = "Player Two Wins!";
+    } else {
+      result = "Draw!";
+    }
+    return result;
+  }
 
 }
