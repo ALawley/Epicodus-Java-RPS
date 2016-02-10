@@ -1,7 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class PROJECTTest {
+public class RockPaperScissorsTest {
 
   @Test
   public void method_input_result() {
