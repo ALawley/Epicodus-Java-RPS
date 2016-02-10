@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 public class RockPaperScissorsTest {
 
   @Test
-  public void method_input_result() {
-    // eventually put your testing code here
+  public void checkWinner_rockBeatsScissors_true() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    assertEquals(true, testRockPaperScissors.checkWinner("Rock", "Scissors"));
   }
 }
