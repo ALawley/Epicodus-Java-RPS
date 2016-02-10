@@ -43,4 +43,10 @@ public class RockPaperScissorsTest {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
     assertEquals("Draw!", testRockPaperScissors.whoWins("Paper", "Paper"));
   }
+  @Test
+  public void computerPlayer_shouldBeAString_true() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    String computerChoice =  testRockPaperScissors.computerPlayer();
+    assertEquals(true, computerChoice instanceof String);
+  }
 }

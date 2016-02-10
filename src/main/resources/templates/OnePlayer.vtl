@@ -1,15 +1,13 @@
 <div class="jumbotron">
-  <div class="form-control">
-    <form action='/checkWinner' method='get'>
-      <div class="form-group">
-        <label for="player1">Rock, Paper, or Scissors?</label>
-        <select id="player1Select" name="player1" class="form-control" type="select">
-          <option>Rock</option>
-          <option>Paper</option>
-          <option>Scissors</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-info">Play the Game!</button>
-    </form>
-  </div>
+  <form action='/checkWinnerOne' method='get'>
+    <div class="form-group">
+      <label for="player1">Rock, Paper, or Scissors?</label>
+      <select id="player1Select" name="player1" class="form-control" type="select">
+        <option id="rock">Rock</option>
+        <option id="paper">Paper</option>
+        <option id="scissors">Scissors</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-info">Play the Game!</button>
+  </form>
 </div>

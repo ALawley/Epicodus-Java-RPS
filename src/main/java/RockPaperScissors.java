@@ -1,3 +1,5 @@
+
+import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 import spark.ModelAndView;
@@ -15,13 +17,32 @@ public class RockPaperScissors {
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
+   get("/OnePlayer", (request, response) -> {
+     Map<String, Object> model = new HashMap<String, Object>();
+     model.put("template", "templates/OnePlayer.vtl");
+     return new ModelAndView(model, layout);
+   }, new VelocityTemplateEngine());
+
    get("/TwoPlayers", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
      model.put("template", "templates/TwoPlayers.vtl");
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
 
-   get("/checkWinner", (request, response) -> {
+   get("/checkWinnerOne", (request, response) -> {
+     Map<String, Object> model = new HashMap<String, Object>();
+     model.put("template", "templates/checkWinner.vtl");
+
+     String player1 = request.queryParams("player1");
+     String player2 = computerPlayer();
+     String result = whoWins(player1, player2);
+
+     model.put("result", result);
+     return new ModelAndView(model, layout);
+   }, new VelocityTemplateEngine());
+
+
+   get("/checkWinnerTwo", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
      model.put("template", "templates/checkWinner.vtl");
 
@@ -55,6 +76,20 @@ public class RockPaperScissors {
       result = "Player Two Wins!";
     } else {
       result = "Draw!";
+    }
+    return result;
+  }
+  public static String computerPlayer() {
+    String result = "";
+    Integer randomNum = 0;
+    Random myRandomGenerator = new Random();
+    randomNum = myRandomGenerator.nextInt(3);
+    if (randomNum == 0) {
+      result = "Rock";
+    } else if (randomNum == 1) {
+      result = "Scissors";
+    } else {
+      result = "Paper";
     }
     return result;
   }
