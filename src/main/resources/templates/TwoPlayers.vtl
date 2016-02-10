@@ -1,23 +1,25 @@
 <div class="jumbotron">
+  <h1>Two Player Rock Paper Scissors!</h1>
+</div>
+<div class="container">
   <form action='/checkWinner' method='get'>
-    <div class="form-control">
-      <div class="form-group">
-        <label>Rock, Paper, or Scissors?</label>
-        <select id="player1Select" name="player1" class="form-control" type="select">
-          <option>Rock</option>
-          <option>Paper</option>
-          <option>Scissors</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Rock, Paper, or Scissors?</label>
-        <select id="player2Select" name="player2" class="form-control" type="select">
-          <option>Rock</option>
-          <option>Paper</option>
-          <option>Scissors</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-info">Play the Game!</button>
+    <h3>Choose your plays!</h3>
+    <div class="form-group">
+      <label for="player1">Rock, Paper, or Scissors?</label>
+      <select id="player1Select" name="player1" class="form-control" type="select">
+        <option id="p1rock">Rock</option>
+        <option id="p1paper">Paper</option>
+        <option id="p1scissors">Scissors</option>
+      </select>
     </div>
+    <div class="form-group">
+      <label for="player2">Rock, Paper, or Scissors?</label>
+      <select id="player2Select" name="player2" class="form-control" type="select">
+        <option id="p2rock">Rock</option>
+        <option id="p2paper">Paper</option>
+        <option id="p2scissors">Scissors</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-info">Play the Game!</button>
   </form>
 </div>
