@@ -1,0 +1,7 @@
+#if($result.equals("Player One Wins!"))
+<h3 class="result-display">$result $player1 beats $player2!</h3>
+#elseif($result.equals("Player Two Wins!"))
+<h3 class="result-display">$result $player2 beats $player1!</h3>
+#else
+<h3 class="result-display">$result</h3>
+#end

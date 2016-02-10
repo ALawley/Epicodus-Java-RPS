@@ -31,12 +31,14 @@ public class RockPaperScissors {
 
    get("/checkWinnerOne", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
-     model.put("template", "templates/checkWinner.vtl");
+     model.put("template", "templates/checkWinnerOne.vtl");
 
      String player1 = request.queryParams("player1");
      String player2 = computerPlayer();
      String result = whoWins(player1, player2);
 
+     model.put("player1", player1);
+     model.put("player2", player2);
      model.put("result", result);
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
@@ -44,12 +46,14 @@ public class RockPaperScissors {
 
    get("/checkWinnerTwo", (request, response) -> {
      Map<String, Object> model = new HashMap<String, Object>();
-     model.put("template", "templates/checkWinner.vtl");
+     model.put("template", "templates/checkWinnerTwo.vtl");
 
      String player1 = request.queryParams("player1");
      String player2 = request.queryParams("player2");
      String result = whoWins(player1, player2);
 
+     model.put("player1", player1);
+     model.put("player2", player2);
      model.put("result", result);
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
